@@ -22,26 +22,26 @@ class CompagnieViewset(viewsets.ModelViewSet):
 
     serializer_class = CompagnieSerializer
     queryset = Compagnie.objects.filter(status=True)
-    # permission_classes = [HasAPIKey]
+    permission_classes = [HasAPIKey]
     
 class CommuneViewset(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
     serializer_class = CommuneSerializer
     queryset = Commune.objects.filter(status=True)
-    # permission_classes = [HasAPIKey ]
+    permission_classes = [HasAPIKey]
     
 class ImageViewset(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
     serializer_class = ImageSerializer
     queryset = ImageEvents.objects.filter(status=True)
-    # permission_classes = [HasAPIKey ]
+    permission_classes = [HasAPIKey ]
     
 class EventViewset(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
 
     serializer_class = EventSerializer
     queryset = Events.objects.filter(status=True)
-    # permission_classes = [HasAPIKey ]
+    permission_classes = [HasAPIKey]
     
 class UtilisateurViewset(viewsets.ViewSet):
     filter_backends = (DynamicSearchFilter,)
@@ -77,16 +77,19 @@ class UtilisateurViewset(viewsets.ViewSet):
             queryset=backends().filter_queryset(self.request,queryset,self)
         return queryset
     
+    permission_classes = [HasAPIKey]
+    
+    
 class ParticipantViewset(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
 
     serializer_class = ParticipantSerializer
     queryset = Participant.objects.filter(status=True)
-    # permission_classes = [HasAPIKey]
+    permission_classes = [HasAPIKey]
     
 class CategorieViewset(viewsets.ModelViewSet):
     filter_backends = (DynamicSearchFilter,)
 
     serializer_class = CategorieSerializer
     queryset = Categorie_event.objects.filter(status=True)
-    # permission_classes = [HasAPIKey]
+    permission_classes = [HasAPIKey]
