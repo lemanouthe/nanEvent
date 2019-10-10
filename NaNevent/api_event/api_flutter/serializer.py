@@ -6,19 +6,20 @@ class ParticipantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participant
         fields = '__all__'
+        depth = 3
 class ImageSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = ImageEvents
         fields = '__all__'
-        # depth = 1
+        depth = 1
 class EventSerializer(serializers.ModelSerializer):
     participant_evenement = ParticipantSerializer(many=True, required=False)
     image_event = ImageSerializer(many=True,required=False)
     class Meta:
         model = Events
         fields = '__all__'
-        # depth = 1
+        depth = 1
 
 class UserSerializer(serializers.ModelSerializer):
     
@@ -31,7 +32,7 @@ class UserSerializer(serializers.ModelSerializer):
             'email',
             'password',      
         ]
-        # depth = 1
+        depth = 1
         
 
 class UtilisateurSerializer(serializers.ModelSerializer):
