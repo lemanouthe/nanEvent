@@ -27,16 +27,26 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# settings.py
+API_KEY_CUSTOM_HEADER = "HTTP_X_API_KEY"
 
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
+    'django_seed',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_admin_generator',
+    'api_flutter.apps.ApiFlutterConfig',
+    "rest_framework_api_key",
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +108,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# REST_FRAMEWORK  =  { 
+#     "DEFAULT_PERMISSION_CLASSES" :  [ 
+#         "rest_framework_api_key.permissions.HasAPIKey",
+#     ] 
+# }
+
 
 
 # Internationalization
