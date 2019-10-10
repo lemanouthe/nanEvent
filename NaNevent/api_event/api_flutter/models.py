@@ -137,6 +137,4 @@ class Participant(models.Model):
 
     def __str__(self):
         """Unicode representation of Participant."""
-        return self.id_utilisateur
-
-
+        return str(self.id_utilisateur)
